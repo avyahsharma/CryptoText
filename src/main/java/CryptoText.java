@@ -45,11 +45,11 @@ public class CryptoText {
         String filePath = "";
         int count = fileSearch.getResult().size();
         if (count == 0) {
-            System.out.println("\nNo result found!");
+            System.out.println("\nCannot find file!");
         }
 
         else {
-            System.out.println("\nFound " + count + " result!\n");
+            System.out.println("\nFound " + count + " result(s)!\n");
             for (String matched : fileSearch.getResult()) {
                 System.out.println("Found! File path is " + matched);
                 filePath = filePath + matched;
@@ -97,15 +97,15 @@ public class CryptoText {
         }
 
         else {
-            System.out.println(directory.getAbsoluteFile() + " is not a directory!");
+            System.out.println(directory.getAbsoluteFile() + " is not a proper directory!");
         }
     }
 
     private void search(File file) {
         if (file.isDirectory()) {
-            System.out.println("Searching directory ... " + file.getAbsoluteFile());
+            System.out.println("Searching directory... " + file.getAbsoluteFile());
 
-            // Determines access to a direction
+            // Determines access to a directory
             if (file.canRead()) {
                 for (File temp : file.listFiles()) {
                     if (temp.isDirectory()) {
